@@ -33,19 +33,19 @@
 31. To run the server constantly even without a terminal window open, type “screen python3 [server_filename.py]”
 32. To cancel a server that you have used the screen command on, type “htop”, navigate to the server operation, and cancel the operation.
 
-## Python Server Structure
-Folder
- Server Ops (Has an __init__.py file so it can be used as a package)
-  Server_main.py
-   **switch_function(sentence_json)**
-   Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so, otherwise returns the json passed in.
-   **run_wordnet(sentence_json)**
-   Runs the appropriate lemmatizer and returns the lemmatized json
+## Python Server Structure  
+Folder  
+ Server Ops (Has an __init__.py file so it can be used as a package)  
+  Server_main.py  
+   **switch_function(sentence_json)**  
+   Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so, otherwise returns the json passed in.  
+   **run_wordnet(sentence_json)**  
+   Runs the appropriate lemmatizer and returns the lemmatized json  
 
-Lemmatizers (Has an __init__.py file so it can be used as a package)
-Server_wordnet_lemma.py
-get_wordnet_pos(word)
-Gets the part of speech of a word if it can be found, otherwise returns the tag as a noun
+Lemmatizers (Has an __init__.py file so it can be used as a package)  
+Server_wordnet_lemma.py  
+get_wordnet_pos(word)  
+Gets the part of speech of a word if it can be found, otherwise returns the tag as a noun  
 lemmatize(sentence_json)
 Runs the wordnet lemmatizer on the text of the json and sets the lemmas field of the json to be the array of lemmas returned by the lemmatizer
 
