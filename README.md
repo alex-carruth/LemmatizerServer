@@ -38,8 +38,7 @@
 Server Ops (Has an __init__.py file so it can be used as a package)  
 &nbsp;Server_main.py  
 &nbsp;&nbsp;**switch_function(sentence_json)**  
-&nbsp;&nbsp;Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so,  
-&nbsp;&nbsp;otherwise returns the json passed in.  
+&nbsp;&nbsp;Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so, otherwise returns the json passed in.  
 &nbsp;&nbsp;**run_wordnet(sentence_json)**  
 &nbsp;&nbsp;Runs the appropriate lemmatizer and returns the lemmatized json  
 
