@@ -1,5 +1,5 @@
 # Lemmatizer Server
-### AWS Lightsail Setup
+## AWS Lightsail Setup
 1. Navigate to the Lightsail home page.
 2. Click on the “Create Instance” button.
 3. Pick the closest region to you as the location.
@@ -33,7 +33,7 @@
 31. To run the server constantly even without a terminal window open, type “screen python3 [server_filename.py]”
 32. To cancel a server that you have used the screen command on, type “htop”, navigate to the server operation, and cancel the operation.
 
-#### Python Server Structure
+## Python Server Structure
 Folder
  Server Ops (Has an __init__.py file so it can be used as a package)
   Server_main.py
