@@ -64,7 +64,7 @@ Main
 Client Namespace (Client.cs)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Access  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Lemmatize(string fileName, Lemmatizer lemmaMaker)**  
-v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reads the text from the specified file, converts the lemmatizer object to a JSON, sends it to the server, gets back string and returns the string converted back from a JSON to a Lemamtizer object  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reads the text from the specified file, converts the lemmatizer object to a JSON, sends it to the server, gets back string and returns the string converted back from a JSON to a Lemamtizer object  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ConnectAndExecute(string message)**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connects to the server, throws exception if it cannot connect, otherwise sends the input message and returns the received string  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**ReadFile(string filename)**  
