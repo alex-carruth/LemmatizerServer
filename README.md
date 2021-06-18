@@ -83,6 +83,7 @@ LemmatizerClient.cs
 ## Notes for Lemmatizer Folder
 lemmatize_text.txt: Holds the biomedical text  
 lemmatize_text_I.txt: Holds the conversational text  
+  
 **Lemmatization Scripts:**  
 * For LuiNorm, the Lemmatizer needs to be downloaded from its site.
 * original_generator.py: Generates the csv for the original words to be compared against the lemmas
