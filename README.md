@@ -34,48 +34,49 @@
 32. To cancel a server that you have used the screen command on, type “htop”, navigate to the server operation, and cancel the operation.
 
 ## Python Server Structure  
-Folder  
-&nbsp;Server Ops (Has an __init__.py file so it can be used as a package)  
-&nbsp;&nbsp;Server_main.py  
-&nbsp;&nbsp;&nbsp;**switch_function(sentence_json)**  
-&nbsp;&nbsp;&nbsp;Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so, otherwise returns the json passed in.  
-&nbsp;&nbsp;&nbsp;**run_wordnet(sentence_json)**  
-&nbsp;&nbsp;&nbsp;Runs the appropriate lemmatizer and returns the lemmatized json  
+<ins>Folder</ins>  
+Server Ops (Has an __init__.py file so it can be used as a package)  
+&nbsp;Server_main.py  
+&nbsp;&nbsp;**switch_function(sentence_json)**  
+&nbsp;&nbsp;Checks to see if the function of the passed in json is one of the function options and runs the appropriate function and returns the json if so,  
+&nbsp;&nbsp;otherwise returns the json passed in.  
+&nbsp;&nbsp;**run_wordnet(sentence_json)**  
+&nbsp;&nbsp;Runs the appropriate lemmatizer and returns the lemmatized json  
 
 Lemmatizers (Has an __init__.py file so it can be used as a package)  
-Server_wordnet_lemma.py  
-get_wordnet_pos(word)  
-Gets the part of speech of a word if it can be found, otherwise returns the tag as a noun  
-lemmatize(sentence_json)
-Runs the wordnet lemmatizer on the text of the json and sets the lemmas field of the json to be the array of lemmas returned by the lemmatizer
+&nbsp;Server_wordnet_lemma.py  
+&nbsp;&nbsp;**get_wordnet_pos(word)**  
+&nbsp;&nbsp;Gets the part of speech of a word if it can be found, otherwise returns the tag as a noun  
+&nbsp;&nbsp;**lemmatize(sentence_json)**  
+&nbsp;&nbsp;Runs the wordnet lemmatizer on the text of the json and sets the lemmas field of the json to be the array of lemmas returned by the lemmatizer  
 
-Main
-PythonMultiServer.py
-clientThread(sock)
-Gets the json packet from the socket, runs the desired function on the json packet, and returns the packet to the user.
-main()
-Binds the socket to the correct port from the server, accepts the client connection and gets the client and address, and creates a new thread for the client to run the necessary function
+Main  
+&nbsp;PythonMultiServer.py  
+&nbsp;&nbsp;**clientThread(sock)**  
+&nbsp;&nbsp;Gets the json packet from the socket, runs the desired function on the json packet, and returns the packet to the user.  
+&nbsp;&nbsp;**main()**  
+&nbsp;&nbsp;Binds the socket to the correct port from the server, accepts the client connection and gets the client and address, and creates a new thread for the client to run the necessary function  
 
-Downloader.py
-Upload and run this file to download whatever specific pieces of the lemmatizer are necessary
+&nbsp;Downloader.py  
+&nbsp;&nbsp;Upload and run this file to download whatever specific pieces of the lemmatizer are necessary  
 
-Python Client Structure
-File
-Client Namespace (Client.cs)
-Access
-Lemmatize(string fileName, Lemmatizer lemmaMaker)
-Reads the text from the specified file, converts the lemmatizer object to a JSON, sends it to the server, gets back string and returns the string converted back from a JSON to a Lemamtizer object
-ConnectAndExecute(string message)
-Connects to the server, throws exception if it cannot connect, otherwise sends the input message and returns the received string
-ReadFile(string filename)
-Reads all the text from the specified file and returns it as a string
-Lemmatizer
-The lemmatizer object that holds the function for the server to run, the text for the server to send, and the lemma array for the server to return
+## Python Client Structure  
+<ins>File</ins>  
+Client Namespace (Client.cs)  
+&nbsp;Access  
+&nbsp;&nbsp;**Lemmatize(string fileName, Lemmatizer lemmaMaker)**  
+&nbsp;&nbsp;Reads the text from the specified file, converts the lemmatizer object to a JSON, sends it to the server, gets back string and returns the string converted back from a JSON to a Lemamtizer object  
+&nbsp;&nbsp;**ConnectAndExecute(string message)**  
+&nbsp;&nbsp;Connects to the server, throws exception if it cannot connect, otherwise sends the input message and returns the received string  
+&nbsp;&nbsp;**ReadFile(string filename)**  
+Reads all the text from the specified file and returns it as a string  
+&nbsp;Lemmatizer  
+&nbsp;&nbsp;The lemmatizer object that holds the function for the server to run, the text for the server to send, and the lemma array for the server to return  
 
-LemmatizerClient.cs
-Run()
-Creates a lemmatizer object and initializes it to the wordnet function then runs the server code to lemmatize the words and outputs one of the lemmas to the screen
+LemmatizerClient.cs  
+&nbsp;**Run()**  
+&nbsp;Creates a lemmatizer object and initializes it to the wordnet function then runs the server code to lemmatize the words and outputs one of the lemmas to the screen  
 
-Notes for Unity project:
-This source stated that the Hololens can only use TCP ports 9000-9100. Most other sources seemed to state that Hololens could use any port.
-In the appxmanifest for the built Unity project, go to Capabilities and enable the Private Networks (Client and Server), Internet (Client and Server), and Internet (Client) to allow the Hololens to correctly access the server.
+## Notes for Unity project:  
+* This source stated that the Hololens can only use TCP ports 9000-9100. Most other sources seemed to state that Hololens could use any port.  
+* In the appxmanifest for the built Unity project, go to Capabilities and enable the Private Networks (Client and Server), Internet (Client and Server), and Internet (Client) to allow the Hololens to correctly access the server.  
